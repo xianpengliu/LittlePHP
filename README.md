@@ -30,3 +30,7 @@ Simple, Simple and Simple.
 ## What it will has
  * sql injection guard
  * templates (Smarty)
+
+## Developer
+ * Xianpeng Liu <xianepngliu@126.com>
+ 
