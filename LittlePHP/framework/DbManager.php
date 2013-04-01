@@ -7,9 +7,10 @@
  */
 class DbManager
 {
-    const DB_DSN = 'mysql:host=localhost;dbname=wxgame';
-    const DB_USER = 'lxp';
-    const DB_PASS = '';
+    const DB_DSN        = 'db.dsn';
+    const DB_USER       = 'db.user';
+    const DB_PASS       = 'db.pass';
+    const DB_PERSISTENT = 'db.persistent';
 
     private static $connect = null;
 
@@ -19,7 +20,13 @@ class DbManager
         {
             try
             {
-                DbManager::$connect = new PDO(DbManager::DB_DSN, DbManager::DB_USER, DbManager::DB_PASS, array(PDO::ATTR_PERSISTENT => true));
+                $dbSettings = parse_ini_file('../config/db_config.ini');
+
+                DbManager::$connect = new PDO($dbSettings[DbManager::DB_DSN],
+                                              $dbSettings[DbManager::DB_USER],
+                                              $dbSettings[DbManager::DB_PASS],
+                                              array(PDO::ATTR_PERSISTENT => $dbSettings[DbManager::DB_PERSISTENT]));
+
                 DbManager::$connect->query("SET NAMES 'UTF8'");
                 DbManager::$connect->query("SET CHARACTER SET UTF8");
                 DbManager::$connect->query("SET CHARACTER_SET_RESULTS=UTF8'");
