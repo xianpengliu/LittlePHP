@@ -16,7 +16,7 @@ At last I found PhpStorm. Thank JetBrains.
 One project is to solve one problem.<br/>
 
 I spent much time to find a handy framework.<br/>
-At last, I gived up and decided to write my own framework.<br/>
+At last, I gave up and decided to write my own framework.<br/>
 Simple, Simple and Simple.
 
 
