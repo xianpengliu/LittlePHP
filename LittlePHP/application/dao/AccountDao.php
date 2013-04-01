@@ -11,12 +11,23 @@ class AccountDao
 {
     public static function queryAccount($wxId)
     {
-        $sql = sprintf("SELECT * FROM %s WHERE %s = %d", Account::TABLE_NAME, Account::ID, $wxId);
-        $result = DbManager::query($sql);
-        $row = DbManager::fetchRow($result);
+        $sql = sprintf('SELECT * FROM %s WHERE %s = ?', Account::TABLE_NAME, Account::ID);
 
-        $account = new Account();
-        $account->updateFromRow($row);
-        return $account;
+        $stmt = DbManager::getDbConnect()->prepare($sql);
+        $stmt->bindParam(1, $wxId);
+        if ($stmt->execute())
+        {
+            $row = $stmt->fetch();
+
+            $account = new Account();
+            $account->updateFromRow($row);
+            return $account;
+        }
+    }
+
+    public static function test()
+    {
+        $account = AccountDao::queryAccount(1);
+        var_dump($account);
     }
 }

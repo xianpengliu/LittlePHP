@@ -19,20 +19,44 @@ class LogManager
     {
         if (LogManager::$logger == null)
         {
-            Logger::configure('../config/log_config.properties');
+            Logger::configure('../config/log_config.ini');
             LogManager::$logger = Logger::getLogger("LOG");
         }
     }
 
-    public static function debug($msg)
+    public static function debug($msg, $file = __FILE__, $line = __LINE__)
     {
         LogManager::initialize();
-        LogManager::$logger->debug($msg);
+        LogManager::$logger->debug(LogManager::formatMsg($msg, $file, $line));
     }
 
-    public static function warn($msg)
+    public static function info($msg, $file = __FILE__, $line = __LINE__)
     {
         LogManager::initialize();
-        LogManager::$logger->warn($msg);
+        LogManager::$logger->info(LogManager::formatMsg($msg, $file, $line));
+    }
+
+    public static function warn($msg, $file = __FILE__, $line = __LINE__)
+    {
+        LogManager::initialize();
+        LogManager::$logger->warn(LogManager::formatMsg($msg, $file, $line));
+    }
+
+    public static function error($msg, $file = __FILE__, $line = __LINE__)
+    {
+        LogManager::initialize();
+        LogManager::$logger->error(LogManager::formatMsg($msg, $file, $line));
+    }
+
+    public static function fatal($msg, $file = __FILE__, $line = __LINE__)
+    {
+        LogManager::initialize();
+        LogManager::$logger->fatal(LogManager::formatMsg($msg, $file, $line));
+    }
+
+
+    private static function formatMsg($msg, $file, $line)
+    {
+        return $msg . ' (' . $file . ':' . $line . ')';
     }
 }
