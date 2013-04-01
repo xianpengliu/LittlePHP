@@ -23,12 +23,11 @@ Simple, Simple and Simple.
 ## What it has
  * Simple routing
  * Simple controller
- * Simple db access
+ * Simple db access (pdo)
  * Simple cache access (memcache)
  * Log (Log4PHP)
 
-## What it will has
- * sql injection guard
+## What it will have
  * templates (Smarty)
 
 ## Developer
