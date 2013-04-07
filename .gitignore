@@ -1,0 +1,6 @@
+
+.idea/*
+LittlePHP/tmp/smarty/cache/*
+LittlePHP/tmp/smarty/compile/*
+LittlePHP/log/*
+.DS_Store
