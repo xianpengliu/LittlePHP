@@ -3,10 +3,12 @@
 define('ROOT_DIR',        dirname(dirname(__FILE__)) . '/');
 define('FRAMEWORK_DIR',   ROOT_DIR . 'framework/');
 define('APPLICATION_DIR', ROOT_DIR . 'application/');
-define('LIBS_DIR',        ROOT_DIR . 'libs');
+define('LIBS_DIR',        ROOT_DIR . 'libs/');
 define('MODULE_DIR',      APPLICATION_DIR . 'module/');
 define('MODEL_DIR',       APPLICATION_DIR . 'model/');
 define('DAO_DIR',         APPLICATION_DIR . 'dao/');
+define('SERVICE_DIR',     APPLICATION_DIR . 'service/');
+define('SMARTY_DIR',      LIBS_DIR . 'smarty/');
 
 set_include_path(
     FRAMEWORK_DIR   . PATH_SEPARATOR .
@@ -14,8 +16,15 @@ set_include_path(
     MODEL_DIR       . PATH_SEPARATOR .
     DAO_DIR         . PATH_SEPARATOR .
     LIBS_DIR        . PATH_SEPARATOR .
+    SERVICE_DIR     . PATH_SEPARATOR .
+    SMARTY_DIR      . PATH_SEPARATOR .
     get_include_path()
 );
+
+define('SMARTY_CONFIG_DIR',  APPLICATION_DIR . 'smarty/config/');
+define('SMARTY_TPL_DIR',     APPLICATION_DIR . 'smarty/template/');
+define('SMARTY_COMPILE_DIR', ROOT_DIR . 'tmp/smarty/compile/');
+define('SMARTY_CACHE_DIR',   ROOT_DIR . 'tmp/smarty/cache/');
 
 ini_set('display_errors', 1);
 ini_set('date.timezone', 'Asia/Shanghai');

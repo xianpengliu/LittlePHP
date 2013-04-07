@@ -40,6 +40,11 @@ class Application
         }
         catch (Exception $e)
         {
+            if (ini_get('display_errors'))
+            {
+                var_dump($e);
+            }
+
             echo 'Action Exception';
             exit;
         }
