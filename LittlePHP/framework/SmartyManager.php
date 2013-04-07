@@ -17,11 +17,13 @@ class SmartyManager
         if (SmartyManager::$smarty == null)
         {
             SmartyManager::$smarty = new Smarty();
-            SmartyManager::$smarty->caching      = true;
-            SmartyManager::$smarty->config_dir   = SMARTY_CONFIG_DIR;
-            SmartyManager::$smarty->template_dir = SMARTY_TPL_DIR;
-            SmartyManager::$smarty->compile_dir  = SMARTY_COMPILE_DIR;
-            SmartyManager::$smarty->cache_dir    = SMARTY_CACHE_DIR;
+            SmartyManager::$smarty->caching         = false;
+            SmartyManager::$smarty->config_dir      = SMARTY_CONFIG_DIR;
+            SmartyManager::$smarty->template_dir    = SMARTY_TPL_DIR;
+            SmartyManager::$smarty->compile_dir     = SMARTY_COMPILE_DIR;
+            SmartyManager::$smarty->cache_dir       = SMARTY_CACHE_DIR;
+            SmartyManager::$smarty->left_delimiter  = '{{';
+            SmartyManager::$smarty->right_delimiter = '}}';
         }
 
         return SmartyManager::$smarty;
