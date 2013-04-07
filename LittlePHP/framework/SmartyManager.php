@@ -17,7 +17,7 @@ class SmartyManager
         if (SmartyManager::$smarty == null)
         {
             SmartyManager::$smarty = new Smarty();
-            SmartyManager::$smarty->caching      = false;
+            SmartyManager::$smarty->caching      = true;
             SmartyManager::$smarty->config_dir   = SMARTY_CONFIG_DIR;
             SmartyManager::$smarty->template_dir = SMARTY_TPL_DIR;
             SmartyManager::$smarty->compile_dir  = SMARTY_COMPILE_DIR;
