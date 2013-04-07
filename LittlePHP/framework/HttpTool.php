@@ -5,22 +5,6 @@
 class HttpTool
 {
     /**
-     * Retrieve a member of the pathinfo params
-     *
-     * @param string $key
-     * @param mixed $default
-     * @return mixed
-     */
-    public static function param($key = null, $default = array())
-    {
-        $params = (array)Cola::getReg('_params');
-
-        if (null === $key) return $params;
-
-        return (isset($params[$key]) ? $params[$key] : $default);
-    }
-
-    /**
      * Retrieve a member of the $_GET superglobal
      *
      * If no $key is passed, returns the entire $_GET array.
@@ -125,38 +109,6 @@ class HttpTool
         }
 
         return (isset($_SESSION[$key])) ? $_SESSION[$key] : $default;
-    }
-
-    /**
-     * Return the value of the given HTTP header. Pass the header name as the
-     * plain, HTTP-specified header name. Ex.: Ask for 'Accept' to get the
-     * Accept header, 'Accept-Encoding' to get the Accept-Encoding header.
-     *
-     * @param string $header HTTP header name
-     * @return string|false HTTP header value, or false if not found
-     * @throws Exception
-     */
-    public static function header($header)
-    {
-        if (empty($header)) {
-            return null;
-        }
-
-        // Try to get it from the $_SERVER array first
-        $temp = 'HTTP_' . strtoupper(str_replace('-', '_', $header));
-        if (!empty($_SERVER[$temp])) {
-            return $_SERVER[$temp];
-        }
-
-        // This seems to be the only way to get the Authorization header on
-        // Apache
-        if (function_exists('apache_request_headers')) {
-            $headers = apache_request_headers();
-            if (!empty($headers[$header])) {
-                return $headers[$header];
-            }
-        }
-        return false;
     }
 
     /**

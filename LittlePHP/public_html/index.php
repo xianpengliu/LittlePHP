@@ -38,6 +38,9 @@ try
     require_once 'LogManager.php';
     require_once 'DbManager.php';
     require_once 'CacheManager.php';
+    require_once 'SessionManager.php';
+
+    SessionManager::start();
 
     /*************************************************************
      * 解析url路径
