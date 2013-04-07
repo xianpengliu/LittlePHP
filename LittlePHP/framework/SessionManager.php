@@ -43,4 +43,13 @@ class SessionManager
     {
         return $_SESSION[$name];
     }
+
+    /*************************************************************
+     * For Debug
+     * echo the session info in memcache
+     *************************************************************/
+    public static function getSessionInfo()
+    {
+        return CacheManager::get(SessionManager::getSessionId());
+    }
 }

@@ -29,6 +29,9 @@ define('SMARTY_CACHE_DIR',   ROOT_DIR . 'tmp/smarty/cache/');
 ini_set('display_errors', 1);
 ini_set('date.timezone', 'Asia/Shanghai');
 
+ini_set("session.save_handler", "memcache");
+ini_set("session.save_path", "127.0.0.1:11211");
+
 try
 {
     /*************************************************************
