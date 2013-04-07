@@ -26,9 +26,10 @@ Simple, Simple and Simple.
  * Simple db access (pdo)
  * Simple cache access (memcache)
  * Log (Log4PHP)
+ * templates (Smarty)
 
 ## What it will have
- * templates (Smarty)
+
 
 ## Developer
  * Xianpeng Liu <xianepngliu@126.com>
