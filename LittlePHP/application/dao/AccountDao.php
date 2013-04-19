@@ -5,9 +5,11 @@
  * Date: 13-3-19
  * Time: PM4:45
  */
+
+require_once 'BaseDao';
 require_once 'Account.php';
 
-class AccountDao
+class AccountDao extends BaseDao
 {
     public static function queryAccount($wxId)
     {

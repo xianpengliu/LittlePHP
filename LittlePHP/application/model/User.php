@@ -5,7 +5,10 @@
  * Date: 13-3-19
  * Time: PM5:08
  */
-class User
+
+require_once 'BaseModel.php';
+
+class User extends BaseModel
 {
     const TABLE_NAME = 'account';
     const ID         = 'id';

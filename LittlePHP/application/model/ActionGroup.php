@@ -5,7 +5,10 @@
  * Date: 13-3-19
  * Time: PM5:15
  */
-class ActionGroup
+
+require_once 'BaseModel.php';
+
+class ActionGroup extends BaseModel
 {
     const TABLE_NAME = 'action_group';
     const ID         = 'id';

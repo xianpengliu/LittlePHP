@@ -5,9 +5,11 @@
  * Date: 13-3-19
  * Time: PM5:35
  */
+
+require_once 'BaseDao.php';
 require_once 'ActionGroup.php';
 
-class ActionGroupDao
+class ActionGroupDao extends BaseDao
 {
     public static function insert($name)
     {

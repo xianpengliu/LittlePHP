@@ -5,7 +5,10 @@
  * Date: 13-3-19
  * Time: PM5:16
  */
-class ActionInfo
+
+require_once 'BaseModel.php';
+
+class ActionInfo extends BaseModel
 {
     const TABLE_NAME = 'action_info';
     const ID         = 'id';

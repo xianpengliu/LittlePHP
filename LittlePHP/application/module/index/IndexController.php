@@ -2,7 +2,10 @@
 /**
  *
  */
-class IndexController
+
+require_once 'BaseController.php';
+
+class IndexController extends BaseController
 {
     public static function indexAction()
     {

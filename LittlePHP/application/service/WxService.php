@@ -5,7 +5,10 @@
  * Date: 13-3-19
  * Time: PM7:48
  */
-class WxService
+
+require_once 'BaseService.php';
+
+class WxService extends BaseService
 {
     static public function process($userInputXml)
     {
