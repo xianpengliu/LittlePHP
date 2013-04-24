@@ -2,5 +2,5 @@
 .idea/*
 LittlePHP/tmp/smarty/cache/*
 LittlePHP/tmp/smarty/compile/*
-LittlePHP/log/*
+LittlePHP/logs/*
 .DS_Store
