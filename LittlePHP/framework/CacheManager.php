@@ -7,8 +7,8 @@
  */
 class CacheManager
 {
-    const CACHE_HOST = 'cache.host';
-    const CACHE_PORT = 'cache.port';
+    const CACHE_HOST = 'host';
+    const CACHE_PORT = 'port';
 
     private static $cache = null;
 
@@ -16,11 +16,12 @@ class CacheManager
     {
         if (CacheManager::$cache == null)
         {
-            $cacheSettings = parse_ini_file('../config/cache_config.ini');
+            require_once 'CacheConfig.php';
+            $cacheConfigArray = CacheConfig::getConfigArray();
 
             CacheManager::$cache = new Memcache();
-            CacheManager::$cache->connect($cacheSettings[CacheManager::CACHE_HOST],
-                                          $cacheSettings[CacheManager::CACHE_PORT]);
+            CacheManager::$cache->connect($cacheConfigArray[ENVIROMENT][CacheManager::CACHE_HOST],
+                                          $cacheConfigArray[ENVIROMENT][CacheManager::CACHE_PORT]);
         }
 
         return CacheManager::$cache;

@@ -1,7 +1,10 @@
 <?php
 
+define('ENVIROMENT', 'dev');
+
 define('ROOT_DIR',        dirname(dirname(__FILE__)) . '/');
 define('FRAMEWORK_DIR',   ROOT_DIR . 'framework/');
+define('CONFIG_DIR',      ROOT_DIR . 'config/');
 define('APPLICATION_DIR', ROOT_DIR . 'application/');
 define('LIBS_DIR',        ROOT_DIR . 'libs/');
 define('MODULE_DIR',      APPLICATION_DIR . 'module/');
@@ -12,6 +15,7 @@ define('SMARTY_DIR',      LIBS_DIR . 'smarty/');
 
 set_include_path(
     FRAMEWORK_DIR   . PATH_SEPARATOR .
+    CONFIG_DIR      . PATH_SEPARATOR .
     APPLICATION_DIR . PATH_SEPARATOR .
     MODEL_DIR       . PATH_SEPARATOR .
     DAO_DIR         . PATH_SEPARATOR .

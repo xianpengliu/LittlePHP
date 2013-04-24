@@ -6,7 +6,7 @@
  * Time: PM4:45
  */
 
-require_once 'BaseDao';
+require_once 'BaseDao.php';
 require_once 'Account.php';
 
 class AccountDao extends BaseDao

@@ -7,10 +7,10 @@
  */
 class DbManager
 {
-    const DB_DSN        = 'db.dsn';
-    const DB_USER       = 'db.user';
-    const DB_PASS       = 'db.pass';
-    const DB_PERSISTENT = 'db.persistent';
+    const DB_DSN        = 'dsn';
+    const DB_USER       = 'user';
+    const DB_PASS       = 'pass';
+    const DB_OPTIONS    = 'options';
 
     private static $connect = null;
 
@@ -20,16 +20,13 @@ class DbManager
         {
             try
             {
-                $dbSettings = parse_ini_file('../config/db_config.ini');
+                require_once 'MysqlConfig.php';
+                $mysqlConfigArray = MysqlConf::getConfigArray();
 
-                DbManager::$connect = new PDO($dbSettings[DbManager::DB_DSN],
-                                              $dbSettings[DbManager::DB_USER],
-                                              $dbSettings[DbManager::DB_PASS],
-                                              array(PDO::ATTR_PERSISTENT => $dbSettings[DbManager::DB_PERSISTENT]));
-
-                DbManager::$connect->query("SET NAMES 'UTF8'");
-                DbManager::$connect->query("SET CHARACTER SET UTF8");
-                DbManager::$connect->query("SET CHARACTER_SET_RESULTS=UTF8'");
+                DbManager::$connect = new PDO($mysqlConfigArray[ENVIROMENT][DbManager::DB_DSN],
+                                              $mysqlConfigArray[ENVIROMENT][DbManager::DB_USER],
+                                              $mysqlConfigArray[ENVIROMENT][DbManager::DB_PASS],
+                                              $mysqlConfigArray[ENVIROMENT][DbManager::DB_OPTIONS]);
             }
             catch (PDOException $e)
             {
