@@ -13,10 +13,10 @@ class ActionGroupDao extends BaseDao
 {
     public static function insert($name)
     {
-        $sql = sprintf('INSERT INTO %s (%s) VALUES (?)', ActionGroup::TABLE_NAME, ActionGroup::NAME);
+        $sql = sprintf('INSERT INTO %s (%s) VALUES (:name)', ActionGroup::TABLE_NAME, ActionGroup::NAME);
 
         $stmt = DbManager::getDbConnect()->prepare($sql);
-        $stmt->bindParam(1, $name);
+        $stmt->bindParam(':name', $name);
         $stmt->execute();
     }
 

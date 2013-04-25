@@ -9,6 +9,9 @@ class IndexController extends BaseController
 {
     public static function indexAction()
     {
+        require_once 'AccountDao.php';
+        AccountDao::test();
+
         require_once 'SmartyManager.php';
 
         $smarty = SmartyManager::getSmarty();

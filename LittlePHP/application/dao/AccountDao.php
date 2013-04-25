@@ -13,10 +13,11 @@ class AccountDao extends BaseDao
 {
     public static function queryAccount($wxId)
     {
-        $sql = sprintf('SELECT * FROM %s WHERE %s = ?', Account::TABLE_NAME, Account::ID);
+        $sql = sprintf('SELECT * FROM %s WHERE %s = :wxId', Account::TABLE_NAME, Account::ID);
 
         $stmt = DbManager::getDbConnect()->prepare($sql);
-        $stmt->bindParam(1, $wxId);
+        $stmt->bindParam(':wxId', $wxId);
+
         if ($stmt->execute())
         {
             $row = $stmt->fetch();
