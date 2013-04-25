@@ -46,6 +46,7 @@ try
     require_once 'DbManager.php';
     require_once 'CacheManager.php';
     require_once 'SessionManager.php';
+    require_once 'ResultManager.php';
 
     SessionManager::start();
 

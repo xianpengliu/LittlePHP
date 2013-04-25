@@ -7,7 +7,7 @@
    数据库分库分表
 
 5、controller基类
-    参数过滤、输出json、session验证等，完全可以放到基类里
+    参数过滤、/*输出json*/、session验证等，完全可以放到基类里
 
 6、dao类、model类的基类
 
