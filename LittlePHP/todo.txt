@@ -11,7 +11,7 @@
 
 6、dao类、model类的基类
 
-7、配置文件写成 php格式
+==>7、配置文件写成 php格式
 
     class MysqlConf{
         private static $_mysql_config=array(

@@ -19,7 +19,10 @@ class LogManager
     {
         if (LogManager::$logger == null)
         {
-            Logger::configure('../config/log_config.ini');
+            require_once 'LogConfig.php';
+            $logConfigArray = LogConfig::getConfigArray();
+
+            Logger::configure($logConfigArray);
             LogManager::$logger = Logger::getLogger("LOG");
         }
     }

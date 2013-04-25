@@ -24,7 +24,7 @@ class LogConfig
                                 )
                             ),
                             'params' => array(
-                                'file' => '../logs/%s.1log',
+                                'file' => '../logs/%s.log',
                                 'append' => true
                             )
                         )
