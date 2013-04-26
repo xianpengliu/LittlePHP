@@ -17,7 +17,7 @@ class Application
 
         if (! file_exists($controllerFile))
         {
-            echo 'Controller not exists';
+            echo ResultManager::getResultJson(ResultManager::CODE_ROUTE_ERROR);
             exit;
         }
 
@@ -30,7 +30,7 @@ class Application
         }
         catch (Exception $e)
         {
-            echo 'Controller/Action not exists';
+            echo ResultManager::getResultJson(ResultManager::CODE_ROUTE_ERROR);
             exit;
         }
 
@@ -45,7 +45,7 @@ class Application
                 var_dump($e);
             }
 
-            echo 'Action Exception';
+            echo ResultManager::getResultJson(ResultManager::CODE_ERROR);
             exit;
         }
     }
