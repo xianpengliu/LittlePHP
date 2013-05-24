@@ -1,6 +1,6 @@
 <?php
 
-define('ENVIROMENT', 'dev');
+define('ENVIRONMENT', 'dev');
 
 define('ROOT_DIR',        dirname(dirname(__FILE__)) . '/');
 define('FRAMEWORK_DIR',   ROOT_DIR . 'framework/');

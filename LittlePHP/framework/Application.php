@@ -17,7 +17,7 @@ class Application
 
         if (! file_exists($controllerFile))
         {
-            echo ResultManager::getResultJson(ResultManager::CODE_ROUTE_ERROR);
+            echo ResultManager::getResultJson(ResultManager::CODE_ERROR_ROUTE);
             exit;
         }
 
@@ -30,7 +30,7 @@ class Application
         }
         catch (Exception $e)
         {
-            echo ResultManager::getResultJson(ResultManager::CODE_ROUTE_ERROR);
+            echo ResultManager::getResultJson(ResultManager::CODE_ERROR_ROUTE);
             exit;
         }
 

@@ -23,10 +23,10 @@ class DbManager
                 require_once 'MysqlConfig.php';
                 $mysqlConfigArray = MysqlConf::getConfigArray();
 
-                DbManager::$connect = new PDO($mysqlConfigArray[ENVIROMENT][DbManager::DB_DSN],
-                                              $mysqlConfigArray[ENVIROMENT][DbManager::DB_USER],
-                                              $mysqlConfigArray[ENVIROMENT][DbManager::DB_PASS],
-                                              $mysqlConfigArray[ENVIROMENT][DbManager::DB_OPTIONS]);
+                DbManager::$connect = new PDO($mysqlConfigArray[ENVIRONMENT][DbManager::DB_DSN],
+                                              $mysqlConfigArray[ENVIRONMENT][DbManager::DB_USER],
+                                              $mysqlConfigArray[ENVIRONMENT][DbManager::DB_PASS],
+                                              $mysqlConfigArray[ENVIRONMENT][DbManager::DB_OPTIONS]);
             }
             catch (PDOException $e)
             {
