@@ -28,8 +28,9 @@ Simple, Simple and Simple.
  * Log (Log4PHP)
  * templates (Smarty)
 
-## What it will have
-
+## Where has it been used
+ * An commercial mobile game for 3 years and still be working.
+ * An commercial mobile app (ios and android)
 
 ## Developer
  * Xianpeng Liu <xianepngliu@126.com>
